@@ -3,9 +3,12 @@
   "integer": 110,
   "boolean": true,
   "array": [1,2,3,4,5],
-  "object": {
-    "string": "This is a string",
-    "integer": 110,
-    "boolean": true
+  "BugHunt": {
+    "ExplicitPlus": "+Hello!",
+    "LeadingDecimal1": "Test .122",
+    "LeadingDecimal2": ".122",
+    "TrailingDecimal1": "Test 112.",
+    "TrailingDecimal2": "112.",
+    "TrailingDecimal3": "Hello."
   }
 }
