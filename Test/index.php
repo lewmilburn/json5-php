@@ -33,6 +33,10 @@ $Test["JSON5NaN"]["Output"] = $JSON5->Parse($Test["JSON5NaN"]["Input"]);
 $Test["JSON5ExplicitPlus"]["Test"] = "JSON5 (Explicit plus sign)";
 $Test["JSON5ExplicitPlus"]["Input"] = file_get_contents(__DIR__ . '/JSON/ExplicitPlus.json5');
 $Test["JSON5ExplicitPlus"]["Output"] = $JSON5->Parse($Test["JSON5ExplicitPlus"]["Input"]);
+
+$Test["JSON5TrailingCommas"]["Test"] = "JSON5 (Trailing commas)";
+$Test["JSON5TrailingCommas"]["Input"] = file_get_contents(__DIR__ . '/JSON/TrailingCommas.json5');
+$Test["JSON5TrailingCommas"]["Output"] = $JSON5->Parse($Test["JSON5TrailingCommas"]["Input"]);
 ?><!DOCTYPE html>
 <html lang="en">
     <head>

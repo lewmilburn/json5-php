@@ -27,21 +27,14 @@ class JSON5
      */
     public function Parse(string $JSON5): object|null
     {
-        // Comments
         $JSON5 = $this->RemoveComment($JSON5);
-
-        // Leading / trailing decimal points
         $JSON5 = $this->RemoveTrailingDecimal($JSON5);
         $JSON5 = $this->RemoveLeadingDecimal($JSON5);
-
-        // Infinity
         $JSON5 = $this->RemoveInfinity($JSON5);
-
-        // NaN
         $JSON5 = $this->RemoveNaN($JSON5);
-
-        // Explicit +
         $JSON5 = $this->RemoveExplicitPlus($JSON5);
+        $JSON5 = $this->RemoveWhitespace($JSON5);
+        $JSON5 = $this->RemoveTrailingCommas($JSON5);
 
         return json_decode($JSON5);
     }
@@ -112,5 +105,27 @@ class JSON5
         $pattern = '/(\D)\+(\d+)/';
         $replacement = '${1}0.$2';
         return preg_replace($pattern, $replacement, $JSON5);
+    }
+
+    /**
+     * Removes additional whitespace characters from JSON5 string.
+     * @param string $JSON5 The JSON5 Object to be parsed.
+     * @return string The JSON5 Object without additional whitespace characters.
+     */
+    private function RemoveWhitespace(string $JSON5): string
+    {
+        $pattern = "/(\".*?\"|'.*?')(*SKIP)(*F)|\\s+/";
+        return preg_replace($pattern, '', $JSON5);
+    }
+
+    /**
+     * Removes trailing commas from JSON5 string.
+     * @param string $JSON5 The JSON5 Object to be parsed.
+     * @return string The JSON5 Object without trailing commas.
+     */
+    private function RemoveTrailingCommas(string $JSON5): string
+    {
+        $JSON5 = str_replace(",}", "}", $JSON5);
+        return str_replace(",]", "]", $JSON5);
     }
 }
