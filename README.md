@@ -15,7 +15,7 @@ The script currently removes JSON5 features that are not supported by PHP, and c
 | [NUMBERS] Leading / Trailing Decimal Points                       | :white_check_mark:| 0.2     |
 | [NUMBERS] IEEE 754 Positive/negative infinity                     | :x:               | -       |
 | [NUMBERS] NaN                                                     | :white_check_mark:| 0.2     |
-| [NUMBERS] Begin with an explicit plus sign                        | :x:               | -       |
+| [NUMBERS] Begin with an explicit plus sign                        | :white_check_mark:| 0.2     |
 | [WHITESPACE] Additional white space characters are allowed        | :x:               | -       |
 | [STRINGS] May be single quoted                                    | :x:               | -       |
 | [STRINGS] May span multiple lines by escaping new line characters | :x:               | -       |

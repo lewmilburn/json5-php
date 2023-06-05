@@ -25,6 +25,10 @@ $Test["JSON5TrailingLeadingDecimal"]["Output"] = $JSON5->Parse($Test["JSON5Trail
 $Test["JSON5NaN"]["Test"] = "JSON5 (NaN values)";
 $Test["JSON5NaN"]["Input"] = file_get_contents(__DIR__ . '/JSON/NaN.json5');
 $Test["JSON5NaN"]["Output"] = $JSON5->Parse($Test["JSON5NaN"]["Input"]);
+
+$Test["JSON5ExplicitPlus"]["Test"] = "JSON5 (Explicit plus sign)";
+$Test["JSON5ExplicitPlus"]["Input"] = file_get_contents(__DIR__ . '/JSON/ExplicitPlus.json5');
+$Test["JSON5ExplicitPlus"]["Output"] = $JSON5->Parse($Test["JSON5ExplicitPlus"]["Input"]);
 ?><!DOCTYPE html>
 <html lang="en">
     <head>

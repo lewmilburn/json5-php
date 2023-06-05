@@ -37,6 +37,9 @@ class JSON5
         // NaN
         $JSON5 = $this->RemoveNaN($JSON5);
 
+        // Explicit +
+        $JSON5 = $this->RemoveExplicitPlus($JSON5);
+
         return json_decode($JSON5);
     }
 
@@ -83,5 +86,17 @@ class JSON5
     private function RemoveNaN(string $JSON5): string
     {
         return str_replace("NaN", "null", $JSON5);
+    }
+
+    /**
+     * Removes explicit plus signs values from the JSON5 string.
+     * @param string $JSON5
+     * @return string The JSON5 Object without explicit plus signs.
+     */
+    private function RemoveExplicitPlus(string $JSON5): string
+    {
+        $pattern = '/(\D)\+(\d+)/';
+        $replacement = '${1}0.$2';
+        return preg_replace($pattern, $replacement, $JSON5);
     }
 }
