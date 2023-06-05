@@ -75,6 +75,11 @@ class JSON5
         return preg_replace($pattern, $replacement, $JSON5);
     }
 
+    /**
+     * Removes NaN values from the JSON5 string.
+     * @param string $JSON5
+     * @return string The JSON5 Object without NaN values.
+     */
     private function RemoveNaN(string $JSON5): string
     {
         return str_replace("NaN", "null", $JSON5);
