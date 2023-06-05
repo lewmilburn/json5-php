@@ -5,8 +5,8 @@ This is a highly experimental, and incomplete package for parsing JSON5 in PHP.
 | Feature                                                           | Supported         | Version |
 |-------------------------------------------------------------------|-------------------|---------|
 | Standard JSON5                                                    | :white_check_mark:| 0.1     |
-| [COMMENTS] Single-line                                            | :x:               | -       |
-| [COMMENTS] Multi-line                                             | :x:               | -       |
+| [COMMENTS] Single-line                                            | :white_check_mark:| 0.1     |
+| [COMMENTS] Multi-line                                             | :white_check_mark:| 0.1     |
 | [NUMBERS] Hexadecimal                                             | :x:               | -       |
 | [NUMBERS] Leading / Trailing Decimal Points                       | :x:               | -       |
 | [NUMBERS] IEEE 754 Positive/negative infinity                     | :x:               | -       |

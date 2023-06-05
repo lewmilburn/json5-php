@@ -4,8 +4,9 @@ require_once __DIR__ . '/../JSON5.php';
 
 $JSON5 = new JSON5();
 
-$ParsedJSON5 = $JSON5->Parse(file_get_contents('example.json5'));
-$ParsedJSON = $JSON5->Parse(file_get_contents('example.json'));
+$TestJSON5All = $JSON5->Parse(file_get_contents(__DIR__ . '/JSON/JSON5.json5'));
+$TestJSON5Comments = $JSON5->Parse(file_get_contents(__DIR__ . '/JSON/Comments.json5'));
+$TestJSON = $JSON5->Parse(file_get_contents(__DIR__ . '/JSON/Standard.json'));
 ?><!DOCTYPE html>
 <html lang="en">
     <head>
@@ -45,10 +46,22 @@ $ParsedJSON = $JSON5->Parse(file_get_contents('example.json'));
         <h1>JSON5-PHP Test</h1>
         <div class="output">
             <div class="output-json">
-                <sup class="output-title">JSON5:</sup><br>
-                <strong><?php var_dump($ParsedJSON5); ?></strong>
+                <sup class="output-title">JSON5 All Features:</sup><br>
+                <strong><?php var_dump($TestJSON5All); ?></strong>
             </div>
-            <?php if ($ParsedJSON5 == null) { ?>
+            <?php if ($TestJSON5All == null) { ?>
+                <p class="test-fail">[FAIL]</p>
+            <?php } else { ?>
+                <p class="test-pass">[PASS]</p>
+            <?php } ?>
+        </div>
+        <br>
+        <div class="output">
+            <div class="output-json">
+                <sup class="output-title">JSON5 Comments:</sup><br>
+                <strong><?php var_dump($TestJSON5Comments); ?></strong>
+            </div>
+            <?php if ($TestJSON5Comments == null) { ?>
                 <p class="test-fail">[FAIL]</p>
             <?php } else { ?>
                 <p class="test-pass">[PASS]</p>
@@ -58,9 +71,9 @@ $ParsedJSON = $JSON5->Parse(file_get_contents('example.json'));
         <div class="output">
             <div class="output-json">
                 <sup class="output-title">Standard JSON:</sup><br>
-                <strong><?php var_dump($ParsedJSON); ?></strong>
+                <strong><?php var_dump($TestJSON); ?></strong>
             </div>
-            <?php if ($ParsedJSON == null) { ?>
+            <?php if ($TestJSON == null) { ?>
                 <p class="test-fail">[FAIL]</p>
             <?php } else { ?>
                 <p class="test-pass">[PASS]</p>

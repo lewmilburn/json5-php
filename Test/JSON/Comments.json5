@@ -1,0 +1,14 @@
+{
+  "string": "This is a string",
+  /*
+    This is a comment
+  */
+  "integer": 110,
+  "boolean": true,
+  "array": [1,2,3,4,5], // comment
+  "object": {
+    "string": "This is a string",
+    "integer": 110,
+    "boolean": true
+  }
+}
