@@ -20,6 +20,16 @@ This is a highly experimental, and incomplete package for parsing JSON5 in PHP.
 | [OBJECTS] Object keys may be an ECMAScript 5.1 IdentifierName.    | :x:               | -       |
 | [OBJECTS] Objects may have a single trailing comma.               | :x:               | -       |
 
+## Example usage
+```
+<?php
+
+require_once '/JSON5.php';
+
+$JSON5 = new JSON5();
+$ParsedJSON5 = $JSON5->Parse(file_get_contents('/data.json5'));
+```
+
 ## License
 JSON5 License: https://json5.org/LICENSE.md
 
