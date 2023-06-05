@@ -1,5 +1,9 @@
 # JSON5 PHP Parser
+Converts JSON5 to PHP object.
+
 This is a highly experimental, and incomplete package for parsing JSON5 in PHP.
+
+The script currently removes JSON5 features that are not supported by PHP, and converts them to their PHP equivalent.
 
 ## Supported Features
 | Feature                                                           | Supported         | Version |
@@ -8,7 +12,7 @@ This is a highly experimental, and incomplete package for parsing JSON5 in PHP.
 | [COMMENTS] Single-line                                            | :white_check_mark:| 0.1     |
 | [COMMENTS] Multi-line                                             | :white_check_mark:| 0.1     |
 | [NUMBERS] Hexadecimal                                             | :x:               | -       |
-| [NUMBERS] Leading / Trailing Decimal Points                       | :x:               | -       |
+| [NUMBERS] Leading / Trailing Decimal Points                       | :white_check_mark:| 0.2     |
 | [NUMBERS] IEEE 754 Positive/negative infinity                     | :x:               | -       |
 | [NUMBERS] NaN                                                     | :x:               | -       |
 | [NUMBERS] Begin with an explicit plus sign                        | :x:               | -       |

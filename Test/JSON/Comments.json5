@@ -8,7 +8,8 @@
   "array": [1,2,3,4,5], // comment
   "object": {
     "string": "This is a string",
-    "integer": 110,
+    "integer": 110, // remove this
     "boolean": true
+    /* JSON */
   }
 }
