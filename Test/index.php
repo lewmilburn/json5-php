@@ -18,6 +18,10 @@ $Test["JSON5Comments"]["Test"] = "JSON5 (Comments)";
 $Test["JSON5Comments"]["Input"] = file_get_contents(__DIR__ . '/JSON/Comments.json5');
 $Test["JSON5Comments"]["Output"] = $JSON5->Parse($Test["JSON5Comments"]["Input"]);
 
+$Test["JSON5Hexadecimal"]["Test"] = "JSON5 (Hexadecimal)";
+$Test["JSON5Hexadecimal"]["Input"] = file_get_contents(__DIR__ . '/JSON/Hexadecimal.json5');
+$Test["JSON5Hexadecimal"]["Output"] = $JSON5->Parse($Test["JSON5Hexadecimal"]["Input"]);
+
 $Test["JSON5TrailingLeadingDecimal"]["Test"] = "JSON5 (Trailing / Leading Decimal)";
 $Test["JSON5TrailingLeadingDecimal"]["Input"] = file_get_contents(__DIR__ . '/JSON/TrailingLeadingDecimal.json5');
 $Test["JSON5TrailingLeadingDecimal"]["Output"] = $JSON5->Parse($Test["JSON5TrailingLeadingDecimal"]["Input"]);
@@ -71,6 +75,10 @@ $Test["JSON5TrailingCommas"]["Output"] = $JSON5->Parse($Test["JSON5TrailingComma
                 font-weight: bold;
                 text-align: center;
             }
+            .json {
+                font-family: monospace;
+                font-weight: bold;
+            }
         </style>
     </head>
     <body>
@@ -81,18 +89,22 @@ $Test["JSON5TrailingCommas"]["Output"] = $JSON5->Parse($Test["JSON5TrailingComma
                 <h2><?= $Item["Test"]; ?></h2>
                 <p>
                     <span class="test-type">Raw JSON5 Input:</span><br>
-                    <strong><?php var_dump($Item["Input"]); ?></strong>
+                    <span class="json"><?= $Item["Input"] ?></span>
                 </p>
                 <p>
                     <span class="test-type">Raw JSON Output:</span><br>
-                    <strong><?php var_dump(json_encode($Item["Output"])); ?></strong>
+                    <span class="json"><?= json_encode($Item["Output"]["JSON"]); ?></span>
                 </p>
                 <p>
                     <span class="test-type">PHP Object Output:</span><br>
-                    <strong><?php var_dump($Item["Output"]); ?></strong>
+                    <span class="json"><?php var_dump($Item["Output"]["JSON"]); ?></span>
+                </p>
+                <p>
+                    <span class="test-type">Time taken to parse (Microseconds):</span><br>
+                    <span class="json"><?= $Item["Output"]["Time"]; ?></span>
                 </p>
             </div>
-            <?php if ($Item["Output"] == null) { ?>
+            <?php if ($Item["Output"]["JSON"] == null) { ?>
                 <p class="test-fail">[FAIL]</p>
             <?php } else { ?>
                 <p class="test-pass">[PASS]</p>

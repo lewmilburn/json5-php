@@ -11,7 +11,7 @@ The script can not currently write JSON5 files, and any files read by the script
 | Standard JSON5                                                    | :white_check_mark:| 0.1     |
 | [COMMENTS] Single-line                                            | :white_check_mark:| 0.1     |
 | [COMMENTS] Multi-line                                             | :white_check_mark:| 0.1     |
-| [NUMBERS] Hexadecimal                                             | :x:               | -       |
+| [NUMBERS] Hexadecimal                                             | :white_check_mark:| 0.3     |
 | [NUMBERS] Leading / Trailing Decimal Points                       | :white_check_mark:| 0.2     |
 | [NUMBERS] IEEE 754 Positive/negative infinity                     | :white_check_mark:| 0.3     |
 | [NUMBERS] NaN                                                     | :white_check_mark:| 0.2     |
