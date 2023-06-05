@@ -1,0 +1,6 @@
+{
+  "infinitePositiveNumber": Infinity,
+  "infiniteExplicitPositiveNumber": +Infinity,
+  "infiniteNegativeNumber": -Infinity,
+  "finiteNumber": 110
+}

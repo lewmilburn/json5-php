@@ -34,6 +34,9 @@ class JSON5
         $JSON5 = $this->RemoveTrailingDecimal($JSON5);
         $JSON5 = $this->RemoveLeadingDecimal($JSON5);
 
+        // Infinity
+        $JSON5 = $this->RemoveInfinity($JSON5);
+
         // NaN
         $JSON5 = $this->RemoveNaN($JSON5);
 
@@ -56,7 +59,7 @@ class JSON5
 
     /**
      * Removes trailing decimal points from the JSON5 string.
-     * @param string $JSON5
+     * @param string $JSON5 The JSON5 Object to be parsed.
      * @return string The JSON5 Object without trailing decimal points.
      */
     private function RemoveTrailingDecimal(string $JSON5): string
@@ -68,7 +71,7 @@ class JSON5
 
     /**
      * Removes leading decimal points from the JSON5 string.
-     * @param string $JSON5
+     * @param string $JSON5 The JSON5 Object to be parsed.
      * @return string The JSON5 Object without leading decimal points.
      */
     private function RemoveLeadingDecimal(string $JSON5): string
@@ -79,8 +82,19 @@ class JSON5
     }
 
     /**
+     * Removes Infinity values from the JSON5 string.
+     * @param string $JSON5 The JSON5 Object to be parsed.
+     * @return string The JSON5 Object without Infinity values.
+     */
+    private function RemoveInfinity(string $JSON5): string
+    {
+        $JSON5 = str_replace("Infinity", "1e9999", $JSON5);
+        return str_replace("-Infinity", "-1e9999", $JSON5);
+    }
+
+    /**
      * Removes NaN values from the JSON5 string.
-     * @param string $JSON5
+     * @param string $JSON5 The JSON5 Object to be parsed.
      * @return string The JSON5 Object without NaN values.
      */
     private function RemoveNaN(string $JSON5): string
@@ -90,7 +104,7 @@ class JSON5
 
     /**
      * Removes explicit plus signs values from the JSON5 string.
-     * @param string $JSON5
+     * @param string $JSON5 The JSON5 Object to be parsed.
      * @return string The JSON5 Object without explicit plus signs.
      */
     private function RemoveExplicitPlus(string $JSON5): string

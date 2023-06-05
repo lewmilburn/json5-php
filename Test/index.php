@@ -22,6 +22,10 @@ $Test["JSON5TrailingLeadingDecimal"]["Test"] = "JSON5 (Trailing / Leading Decima
 $Test["JSON5TrailingLeadingDecimal"]["Input"] = file_get_contents(__DIR__ . '/JSON/TrailingLeadingDecimal.json5');
 $Test["JSON5TrailingLeadingDecimal"]["Output"] = $JSON5->Parse($Test["JSON5TrailingLeadingDecimal"]["Input"]);
 
+$Test["JSON5Infinity"]["Test"] = "JSON5 (Infinite Numbers)";
+$Test["JSON5Infinity"]["Input"] = file_get_contents(__DIR__ . '/JSON/Infinity.json5');
+$Test["JSON5Infinity"]["Output"] = $JSON5->Parse($Test["JSON5Infinity"]["Input"]);
+
 $Test["JSON5NaN"]["Test"] = "JSON5 (NaN values)";
 $Test["JSON5NaN"]["Input"] = file_get_contents(__DIR__ . '/JSON/NaN.json5');
 $Test["JSON5NaN"]["Output"] = $JSON5->Parse($Test["JSON5NaN"]["Input"]);
