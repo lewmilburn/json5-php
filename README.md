@@ -5,6 +5,9 @@ This is a highly experimental, and incomplete package for parsing JSON5 in PHP.
 
 The script can not currently write JSON5 files, and any files read by the script can't be converted back to JSON5 by the script.
 
+## Known issues
+https://github.com/lewmilburn/json5-php/issues
+
 ## Supported Features
 | Feature                                                           | Supported         | Version |
 |-------------------------------------------------------------------|-------------------|---------|
